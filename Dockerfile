@@ -8,7 +8,7 @@ ARG QEMU
 
 # Set environment variables for running
 ENV ARCH=${ARCH}
-ENV DEBIAN_FRONTEND=noninteractive
+ENV DEBIAN_FRONTEND=interactive
 ENV CHIP=${CHIP}
 ENV QEMU=${QEMU}
 
@@ -86,7 +86,7 @@ RUN chroot /mnt/data/${ARCH} /bin/bash -c "\
 
 # Clone core_builds repository within the chroot
 RUN chroot /mnt/data/${ARCH} /bin/bash -c "\
-    git clone https://github.com/christianhaitian/${CHIP}_core_builds.git"
+    git clone https://github.com/Akira8484/rk3566_core_builds.git
 
 # Add a script to run build.sh and copy the output
 RUN echo '#!/bin/bash\n\
